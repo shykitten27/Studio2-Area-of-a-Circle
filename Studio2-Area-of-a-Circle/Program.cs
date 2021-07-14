@@ -14,7 +14,7 @@ namespace Studio2_Area_of_a_Circle
             input = Console.ReadLine();
             radius = double.Parse(input);
             area = Math.PI * Math.Pow(radius, 2.0);
-            Console.WriteLine("The area of a circle of radius " + radius + " is: " + area;
+            Console.WriteLine("The area of a circle of radius " + radius + " is: " + area);
         }
     }
 }
