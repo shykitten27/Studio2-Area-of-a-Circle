@@ -7,23 +7,31 @@ namespace Studio2_Area_of_a_Circle
         static void Main(string[] args)
         {
             string input;
-            //double radius;
+            double radius;
             double mpg;
             double amtOfGas;
 
             Console.WriteLine("Enter a radius:");
             input = Console.ReadLine();
-            double result;
+            double result; // input when parsed 
             //radius = double.Parse(input);
 
-            while (input == "" || !double.TryParse(input, out result) || double.Parse(input) < 0)
+            if (input == "" || !double.TryParse(input, out result)) //in blank or NOT double
+            {
+                Console.WriteLine("Invalid radius - exiting program. ");
+                Environment.Exit(0);
+            }
+
+            radius = double.Parse(input);
+            while (radius < 0)
             {
                 Console.WriteLine("Please enter a valid radius");
                 input = Console.ReadLine();
+                radius = double.Parse(input);
 
             }
 
-            double radius = double.Parse(input);
+            //double radius = double.Parse(input);
             Console.WriteLine("Enter miles per gallon of your car:");
             input = Console.ReadLine();
             mpg = double.Parse(input);
